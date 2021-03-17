@@ -19,5 +19,5 @@
   <li> Hệ thống cho phép người dùng đánh giá về sản phẩm họ mua. </li>
   <li> Hệ thống cho phép tạo các đợt giảm giá theo chương trình khuyến mãi. </li>
   <li> Hệ thống tạo các khảo sát cho người dùng. </li>
-  <li> Hệ thống cho phép phân loại khách hàng theo mức chi tiêu của họ.  fhh </li>
+  <li> Hệ thống cho phép phân loại khách hàng theo mức chi tiêu của họ. </li>
 </ul>
