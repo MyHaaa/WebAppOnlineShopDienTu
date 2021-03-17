@@ -8,7 +8,7 @@
 
 ## Mô tả đề tài: gồm có các chức năng sau:
 <ul>
-  <li> Hệ thống cho phép người dùng vào web xem thông tin sản phẩm. </li>
+  <li> Cho phép người dùng vào web xem thông tin sản phẩm. </li>
   <li> Người dùng đăng ký tài khoản và đăng nhập để mua sản phẩm. </li>
   <li> Người dùng có thể xem lại thông tin cá nhân, thay đổi thông tin cá nhân nhưng không cho phép thay đổi email. </li>
   <li> Cho phép người dùng đặt đồ vào giỏ hàng. </li>
