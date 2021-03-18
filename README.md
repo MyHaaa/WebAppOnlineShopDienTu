@@ -12,9 +12,8 @@
   <li> Người dùng đăng ký tài khoản và đăng nhập để mua sản phẩm. </li>
   <li> Người dùng có thể xem lại thông tin cá nhân, thay đổi thông tin cá nhân nhưng không cho phép thay đổi email. </li>
   <li> Cho phép người dùng đặt đồ vào giỏ hàng. </li>
-  <li> Cho phép người dùng chọn các phương thức thanh toán, xem lại đơn hàng chi tiết đã mua. </li>
+  <li> Cho phép người dùng chọn các phương thức thanh toán, xem lại đơn hàng chi tiết đã mua và hiển thị trạng cho người dùng xem. </li>
   <li> Hệ thống quản lý từng user dựa vào địa chỉ email. </li>
-  <li> Đơn hàng hiển thị các trạng thái cho khách hàng. </li>
   <li> Đơn hàng khi được đặt thì hệ thống sẽ thông báo cho admin biết để admin xử lý các đơn hàng. </li>
   <li> Hệ thống cho phép người dùng đánh giá về sản phẩm đã mua. </li>
 </ul>
