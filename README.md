@@ -14,6 +14,6 @@
   <li> Cho phép người dùng đặt đồ vào giỏ hàng. </li>
   <li> Cho phép người dùng chọn các phương thức thanh toán, xem lại đơn hàng chi tiết đã mua. </li>
   <li> Hệ thống quản lý từng user dựa vào địa chỉ email. </li>
-  <li> Đơn hàng được đặt sẽ được hệ thống báo lên và chờ người dùng xử lý các đơn hàng của khách hàng. </li>
+  <li> Đơn hàng khi được đặt thì hệ thống sẽ thông báo cho admin biết để admin xử lý các đơn hàng </li>
   <li> Hệ thống cho phép người dùng đánh giá về sản phẩm đã mua. </li>
 </ul>
