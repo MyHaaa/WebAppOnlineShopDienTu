@@ -6,14 +6,9 @@
   <li> Thành viên số 3: Huỳnh Kim Thành </li>
 </ul>
 
-## Mô tả đề tài: gồm có các chức năng sau:
+## Mô tả đề tài: 
 <ul>
-  <li> Cho phép người dùng vào web xem thông tin sản phẩm. </li>
-  <li> Người dùng đăng ký tài khoản và đăng nhập để mua sản phẩm. </li>
-  <li> Người dùng có thể xem lại thông tin cá nhân, thay đổi thông tin cá nhân nhưng không cho phép thay đổi email. </li>
-  <li> Cho phép người dùng đặt đồ vào giỏ hàng. </li>
-  <li> Cho phép người dùng chọn các phương thức thanh toán, xem lại đơn hàng chi tiết đã mua và hiển thị trạng thái cho người dùng xem. </li>
-  <li> Hệ thống quản lý từng user dựa vào địa chỉ email. </li>
-  <li> Đơn hàng khi được đặt thì hệ thống sẽ thông báo cho admin biết để admin xử lý các đơn hàng. </li>
-  <li> Hệ thống cho phép người dùng đánh giá về sản phẩm đã mua. </li>
+  <li> Với vai trò là Admin: Admin có thể quản lý user theo danh sách các account, có thể thao tác xử lý với các tài khoản, hoặc gửi mật khẩu mới cho các tài khoản đã quên mật khẩu thông qua email. </li>
+  <li> Với vai trò là nhân viên bán hàng: Nhân viên bán hàng có thể tương tác xử lý với tính năng quản lý sản phẩm, có thể theo dõi các đơn hàng thông qua các chức năng sort, đồng thời có thể chủ động thay đổi menu left và footer. </li>
+  <li> Với vai trò là khách hàng: người dùng có thể theo dõi tình trạng của đơn hàng, có thể xem lại các đơn hàng đã đặt, và cũng như có thể hủy đơn hàng. </li>
 </ul>
