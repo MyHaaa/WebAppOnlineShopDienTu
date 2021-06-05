@@ -1,0 +1,136 @@
+﻿@model Models.EF.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Detail Order No. @Html.DisplayFor(model => model.ID)
+        </div>
+        <div class="row w3-res-tb">
+            <div class="col-sm-5 m-b-xs">
+            </div>
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-info">@Html.ActionLink("Cancel", "Index")</button>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-danger"> @Html.ActionLink("Approve", "Approve", new { id = Model.ID })</button>
+            </div>
+        </div>
+        <hr style=" width: 880px;text-align: center; height: 1px; padding-top: 10px; " noshade />
+        <div class="row" style="padding-top: 20px"></div>
+        <div class="table-responsive">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3" style="text-align: right; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Customer.Username)
+                </div>
+                <div class="col-sm-6">
+                    @Html.DisplayFor(model => model.Customer.Username)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: right; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Amount)
+                </div>
+                <div class="col-sm-6">
+                    @Html.DisplayFor(model => model.Amount)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: right; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.NOTE)
+                </div>
+                <div class="col-sm-6">
+                    @Html.DisplayFor(model => model.NOTE)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: right; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </div>
+                <div class="col-sm-6">
+                    @String.Format("{0:MM/dd/yyyy}", Model.CreatedDate)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: right; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.StatusCategoryID)
+                </div>
+                <div class="col-sm-6">
+                    @Html.DisplayFor(model => model.StatusCategoryID)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 30px"></div>
+        </div>
+
+
+        <div class="table-responsive">
+            <div class="panel-heading">
+                Products List In Order
+            </div>
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; color: black">
+                            Image
+                        </th>
+                        <th style="text-align: center; color: black">
+                            Product
+                        </th>
+                        <th style="text-align: center; color: black">
+                            Unit Price
+                        </th>
+                        <th style="text-align: center; color: black">
+                            Quantity
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderDetails)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(item.Product.Image)" style="width: 200px; height: 100px;" />
+                            </td>
+                            <td style="text-align: center; color: black">
+                                @item.Product.ProductName
+                            </td>
+                            <td style="text-align: center; color: black">
+                                @item.Product.Price
+                            </td>
+                            <td style="text-align: center; color: black">
+                                @item.Quantity
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-12 text-right text-center ">
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

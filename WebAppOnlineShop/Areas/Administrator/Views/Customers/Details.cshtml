@@ -1,0 +1,162 @@
+﻿@model Models.EF.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Detail tài khoản người dùng
+        </div>
+        <div class="row w3-res-tb">
+            <div class="col-sm-5 m-b-xs">
+            </div>
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-info">@Html.ActionLink("Cancel", "Index")</button>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-danger"> @Html.ActionLink("Edit", "Edit", new { id = Model.ID })</button>
+            </div>
+        </div>
+        <hr style=" width: 880px;text-align: center; height: 1px; padding-top: 10px; " noshade />
+        <div class="row" style="padding-top: 20px"></div>
+        <div class="table-responsive">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Username)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Username)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.CustomerName)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.ContactPerson)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.ContactPerson)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.EmailContactPerson)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.EmailContactPerson)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.FaxNumber)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.FaxNumber)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.MobileContactPerson)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.MobileContactPerson)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Address1)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Address1)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Addrees2)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Addrees2)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.PhoneContactPerson)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.PhoneContactPerson)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.CreatedDate)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Status)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Status)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 30px"></div>
+
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+
+
+                <div class="col-sm-12 text-right text-center ">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+

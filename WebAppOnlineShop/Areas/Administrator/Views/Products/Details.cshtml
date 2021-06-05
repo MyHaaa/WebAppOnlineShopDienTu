@@ -1,0 +1,183 @@
+﻿@model Models.EF.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Detail sản phẩm
+        </div>
+        <div class="row w3-res-tb">
+            <div class="col-sm-5 m-b-xs">
+            </div>
+            <div class="col-sm-5 m-b-xs">
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-info">@Html.ActionLink("Cancel", "Index")</button>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-sm btn-warning"> @Html.ActionLink("Edit", "Edit", new { id = Model.ID })</button>
+            </div>
+        </div>
+        <hr style=" width: 880px;text-align: center; height: 1px; padding-top: 10px; " noshade />
+        <div class="row" style="padding-top: 20px"></div>
+        <div class="table-responsive">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.ProductName)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Alias)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Alias)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.ProductCategory.Name)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.SupplierID)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Supplierss.SupplierName)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Quantity)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Image)
+                </div>
+                <div class="col-sm-7">
+                    <img src="@Url.Content(Model.Image)" style="width: 200px; height: 100px;" />
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Price)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Price)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Description)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.MetaKeyword)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.MetaKeyword)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.CreatedDate)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.Status)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.Status)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 30px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.HomeFlag)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.HomeFlag)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 30px"></div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-3" style="text-align: left; font-weight: bold;">
+                    @Html.DisplayNameFor(model => model.HotFlag)
+                </div>
+                <div class="col-sm-7">
+                    @Html.DisplayFor(model => model.HotFlag)
+                </div>
+            </div>
+            <div class="row" style="padding-top: 30px"></div>
+
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+
+
+                <div class="col-sm-12 text-right text-center ">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
