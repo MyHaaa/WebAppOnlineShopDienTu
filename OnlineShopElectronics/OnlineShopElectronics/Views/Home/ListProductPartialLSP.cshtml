@@ -1,0 +1,56 @@
+﻿@using OnlineShopElectronics.Models
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "lstSP";
+    Layout = "~/Views/Shared/P_Layout.cshtml";
+
+}
+<!--menu danh muc-->
+@*<div class="sub-cate">
+    <h3 class="cate">CATEGORIES</h3>
+    @{ Html.RenderAction("MenuPartial", "Home");}
+
+</div>
+<a class="view-all all-product" href="/Products/Index">VIEW ALL PRODUCTS<span> </span></a>
+<div class="clearfix"> </div>*@
+
+    @*<div class="home-filter hide-on-mobile-tablet">
+            <span class="home-filter__label">Sắp xếp theo</span>
+            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+
+            <div class="select-input">
+                <span class="select-input__label">Giá</span>
+                <i class="select-input__icon fas fa-angle-down"></i>
+                <ul class="select-input__list">
+                    <li class="select-input__item">
+                        Giá: Thấp đến cao
+                    </li>
+                    <li class="select-input__item">
+                        Giá: Cao đến thấp
+                    </li>
+                </ul>
+            </div>
+        </div>*@
+    <div class="col-md-4 chain-grid">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Details","Home",new { id=item.ID})">
+                <img title=" " alt=" " src="@item.Image" @*width="70" height="70" margin-top=5px*@ class="img-responsive" />
+            </a>
+
+            <div class="grid-chain-bottom">
+                <h6><a href="single.html">@item.ProductName</a></h6>
+                <div class="star-price">
+                    <div class="dolor-grid">
+                        <span class="actual">@item.Price</span>
+                        <span class="reducedfrom">400$</span>
+
+                    </div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+        }
+    </div>
+

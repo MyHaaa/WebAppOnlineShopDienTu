@@ -1,0 +1,188 @@
+﻿@model OnlineShopElectronics.Models.Product
+@{
+    ViewBag.Title = "Detailes";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ryzen</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--theme-style-->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!--script-->
+    <script type="text/javascript" charset="utf-8" async defer>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="bottom-header">
+            <div class="container">
+                <div class="header-bottom-left">
+                    <div class="logo" style="display: inline-flex;">
+                        <a href="Homie.html"><img src="~/Content/img/logo4.png" alt=" " /></a>
+                        <h4 style="color: #000000 ; padding-left: 10px; padding-top: 10px;"><strong>SHOP BY YOUR WAY</strong></h4>
+                    </div>
+                    <div class="search">
+                        <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                        <input type="submit" value="SEARCH">
+
+                    </div>
+                    <div class="clearfix"> </div>
+
+                </div>
+
+                <div class="header-bottom-right">
+                    <div class="account">
+                        <a href="Homie.html"><span></span>YOUR ACCOUNT</a>
+                        <a href="Homie.html">
+                            <span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            </svg> CHECK ORDER
+                        </a>
+
+                    </div>
+                    <ul class="login">
+                        <li><a href="login.html"><span> </span>LOGIN</a></li> |
+                        <li><a href="register.html">SIGNUP</a></li>
+                    </ul>
+                    <div class="cart"><a href="#"><span> </span>CART</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="container">
+        <div class="shoes-grid">
+            <a href="single.html">
+                <div class="wrap-in">
+
+                </div>
+            </a>
+
+            <div class="row" style="padding-top: 12px;">
+
+                <div class="col-md-12">
+                    <div class="noidung">
+                        <div class="col-md-3">
+                            <img src="@Model.Image" style="width: 300px; height:450px">
+                        </div>
+                        <div class="col-md-9 chitiet thongtin" style="left: 200px;padding-top: 29px">
+                            <h4>@Model.ProductName</h4>
+                            <span class="actual">@Model.Price</span>
+                            <span class="reducedfrom">400$</span>
+
+
+
+                            <p><span>Category: </span>@Model.ProductCategory.Name </p>
+                            <p><span>Description: </span>@Model.Description</p>
+                            <p><span>Created Date: </span>@Model.CreatedDate</p>
+
+                            <div class="mt-5 text-left" style="padding-top: 10px"><button class="btn btn-primary profile-button" type="button"><a href="password.html">BUY NOW</a></button></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="clearfix"> </div>
+        </div>
+        <div class="sub-cate">
+            <h3 class="cate">CATEGORIES</h3>
+            @{ Html.RenderAction("MenuPartial", "Home");}
+
+        </div>
+        <a class="view-all all-product" href="/Products/Index">VIEW ALL PRODUCTS<span> </span></a>
+        <div class="clearfix"> </div>
+
+    </div>
+  
+    <!---->
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="col-lg-6" style="display: inline-flex;">
+                    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+                    <span class="iconify" data-inline="false" data-icon="vaadin:piggy-bank-coin" style="font-size: 50px; padding-right: 10px;"></span>
+                    <h4 style="padding-top: 5px;">SALES PRICE, GOOD WARRANTY</h4>
+                </div>
+                <div class="col-lg-6" style="display: inline-flex;">
+                    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+                    <span class="iconify" data-inline="false" data-icon="ps:row-setting" style="font-size: 50px; padding-right: 10px;"></span>
+                    <h4>REPAIR SERVICES, PRESTIGE WARRANTY, FAST, CONVENIENT</h4>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="col-lg-6">
+                    <h3><strong>The standard chunk of Lorem</strong></h3>
+                    <ul>
+                        <p>
+                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                        </p>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3><strong>Quick Links</strong></h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3><strong>Get In Touch</strong></h3>
+                    <ul>
+                        @*<li>Address:&nbsp;406 Nguyễn Tri Phương, phường 4, quận 10, TPHCM &nbsp;<a href="https://www.google.com/maps/place/406+Nguy%E1%BB%85n+Tri+Ph%C6%B0%C6%A1ng,+Ph%C6%B0%E1%BB%9Dng+4,+Qu%E1%BA%ADn+10,+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7647369,106.66565,17z/data=!3m1!4b1!4m5!3m4!1s0x31752ee68c01819d:0x9493db289a604bdd!8m2!3d10.7647316!4d106.6678387">Way to go</a></li>
+                            <li>Phone:&nbsp;0901446256&nbsp;</li>*@
+                        <li>
+                            Email:&nbsp;
+                            <a href="mailto:meowithluv.vn@gmail.com">vuonglanly1507@gmail.com</a>
+                        </li>
+
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

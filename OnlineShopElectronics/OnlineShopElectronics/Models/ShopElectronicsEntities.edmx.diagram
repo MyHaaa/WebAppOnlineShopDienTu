@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84bab768295d400582436d35de0ef3e8" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.Customer" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.OrderDetail" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.Order" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.ProductCategory" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.SaleReportDetail" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopElectronicsModel.Supplierss" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_SaleReportDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_Products_ProductCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopElectronicsModel.FK_Products_Supplierss" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

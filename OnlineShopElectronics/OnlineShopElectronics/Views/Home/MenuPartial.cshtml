@@ -1,0 +1,54 @@
+﻿@using OnlineShopElectronics.Models
+@model IEnumerable<Product>
+<head>
+
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--theme-style-->
+    <link href="../Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!--script-->
+    <script type="text/javascript" charset="utf-8" async defer>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<nav class="navigation">
+    <ul class="mainmenu">
+        <li>
+            @foreach (var groupItem in Model.GroupBy(n => n.ProductCategory))
+            {
+                if (groupItem.Key != null)
+                {
+                <li class="category-item category-item--active ">
+                    <a href="@Url.Action("ListProductPartialLSP","Home",new { @MaloaiSP=groupItem.Key.ID})" class="category-item__link">@groupItem.Key.Name </a>
+
+                </li>
+            }
+
+        }
+            </li>
+        </ul>
+    </nav>

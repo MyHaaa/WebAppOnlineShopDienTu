@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/P_Layout.cshtml";
+    //Layout = null;
+}
+<div class="col-md-4 chain-grid">
+    @foreach (var item in Model)
+    {
+    <a href="@Url.Action("Details","Home",new { id=item.ID})">
+        <img title=" " alt=" " src="@item.Image" @*width="70" height="70" margin-top=5px*@ class="img-responsive" />
+    </a>
+      
+        <div class="grid-chain-bottom">
+            <h6><a href="single.html">@item.ProductName</a></h6>
+            <div class="star-price">
+                <div class="dolor-grid">
+                    <span class="actual">@item.Price</span>
+                    <span class="reducedfrom">400$</span>
+                   
+                </div>
+                <a class="now-get get-cart" href="#">ADD TO CART</a>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    
+    }
+</div>
+
