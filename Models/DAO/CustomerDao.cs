@@ -15,6 +15,13 @@ namespace Models.DAO
             db = new OnlineShopElectronicsDbContext();
         }
 
+        public long Insert(Customer entity)
+        {
+            db.Customers.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
+
         public Customer GetById(string userName)
         {
             return db.Customers.SingleOrDefault(x => x.Username == userName);
@@ -28,7 +35,7 @@ namespace Models.DAO
         }
 
 
-        public int Login(string userName, string passWord)
+        public int Login(string userName, string passWord, bool isLoginAdmin = false)
         {
             var result = db.Customers.SingleOrDefault(x => x.Username == userName);
             if (result == null)
@@ -37,16 +44,33 @@ namespace Models.DAO
             }
             else
             {
-                if (result.IsAdmin == true)
+               if(isLoginAdmin == true)
                 {
-                    if (result.Password == passWord)
-                        return 1;
+                    if (result.IsAdmin == true)
+                    {
+                        if (result.Password == passWord)
+                            return 1;
+                        else
+                            return -1;
+                    }
                     else
-                        return -1;
+                    {
+                        return -2;
+                    }
                 }
                 else
                 {
-                    return -2;
+                    if (result.Status == false)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (result.Password == passWord)
+                            return 1;
+                        else
+                            return -2;
+                    }
                 }
             }
         }
@@ -57,6 +81,16 @@ namespace Models.DAO
             customer.Status = !customer.Status;
             db.SaveChanges();
             return customer.Status;
+        }
+
+
+        public bool CheckUserName(string userName)
+        {
+            return db.Customers.Count(x => x.Username == userName) > 0;
+        }
+        public bool CheckEmail(string email)
+        {
+            return db.Customers.Count(x => x.EmailContactPerson == email) > 0;
         }
     }
 }

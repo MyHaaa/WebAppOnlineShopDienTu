@@ -38,7 +38,7 @@ namespace Models.EF
         [StringLength(500)]
         public string Image { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace WebAppOnlineShop.Commons
 {
+    [Serializable]
     public class UserLogin
     {
         public long CustomerID { set; get; }

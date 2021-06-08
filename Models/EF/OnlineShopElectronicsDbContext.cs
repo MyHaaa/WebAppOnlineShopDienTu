@@ -37,9 +37,7 @@ namespace Models.EF
                 .Property(e => e.PhoneContactPerson)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Order>()
-                .Property(e => e.Amount)
-                .IsFixedLength();
+           
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderDetails)
@@ -74,5 +72,7 @@ namespace Models.EF
                 .WithOptional(e => e.Supplierss)
                 .HasForeignKey(e => e.SupplierID);
         }
+
+        public System.Data.Entity.DbSet<Models.ViewModel.ProductViewModel> ProductViewModels { get; set; }
     }
 }

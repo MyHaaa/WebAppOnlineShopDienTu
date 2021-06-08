@@ -41,9 +41,8 @@ namespace Models.EF
         [StringLength(50)]
         public string MobileContactPerson { get; set; }
 
-        public string Address1 { get; set; }
+        public string Address { get; set; }
 
-        public string Addrees2 { get; set; }
 
         [StringLength(50)]
         public string PhoneContactPerson { get; set; }

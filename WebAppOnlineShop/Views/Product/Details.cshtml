@@ -1,0 +1,74 @@
+﻿@model Models.EF.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (Models.EF.ProductCategory)ViewBag.Category;
+    var relatedProducts = (List<Models.EF.Product>)ViewBag.RelatedProducts;
+
+
+}
+
+<div class="container">
+    <div class="sub-cate">
+        @{Html.RenderAction("ProductCategory", "Product");}
+        <!--initiate accordion-->
+    </div>
+    <div class="shoes-grid" style="padding-top: 30px;">
+        <div class="col-md-6">
+            <img src="@Model.Image" style="width: 300px; height:300px">
+        </div>
+        <div class=" col-md-5 ">
+            <h2><b>@Model.ProductName</b></h2>
+            <p>@Model.Description</p>
+            <h3>Price: <span>@Model.Price</span></h3>
+            <a class="now-get get-cart" href="#" style="text-align: left">ADD TO CART</a>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="shoes-grid" style="padding-top:80px;">
+        <div class="products">
+            <h5 class="latest-product">RELATED PRODUCTS</h5>
+            <!--  <a class="view-all" href="product.html">VIEW ALL<span> </span></a> 	-->
+        </div>
+        <div class="product-left">
+            @foreach (var item in relatedProducts)
+            {
+                var url = "/details/" + item.MetaKeyword + "-" + item.ID;
+                <div class="col-md-4 chain-grid grid-top-chain" style="margin: 10px;">
+                    <a href="@url"><img class="img-responsive chain" src="@item.Image" style="width: 200px; height: 250px;" alt="@item.ProductName" /></a>
+                    <span class="star"> </span>
+                    <div class="grid-chain-bottom">
+                        <h6><a href="single.html">@item.ProductName</a></h6>
+                        <div class="star-price">
+                            <div class="dolor-grid">
+                                <span class="actual">@item.Price</span>
+                                <span class="rating">
+                                    <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+                                    <label for="rating-input-1-5" class="rating-star1"> </label>
+                                    <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+                                    <label for="rating-input-1-4" class="rating-star1"> </label>
+                                    <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+                                    <label for="rating-input-1-3" class="rating-star"> </label>
+                                    <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+                                    <label for="rating-input-1-2" class="rating-star"> </label>
+                                    <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+                                    <label for="rating-input-1-1" class="rating-star"> </label>
+                                </span>
+                            </div>
+                            <a class="now-get get-cart" href="#">ADD TO CART</a>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+

@@ -21,8 +21,8 @@ namespace Models.EF
 
         public string NOTE { get; set; }
 
-        [StringLength(10)]
-        public string Amount { get; set; }
+
+        public decimal Amount { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime CreatedDate { get; set; }

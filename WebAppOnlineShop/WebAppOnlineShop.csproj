@@ -149,10 +149,16 @@
     <Compile Include="Commons\CommonConstants.cs" />
     <Compile Include="Commons\GlobalClass.cs" />
     <Compile Include="Commons\UserLogin.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -854,6 +860,38 @@
     <Content Include="Assets\Admin\js\raphael-min.js" />
     <Content Include="Assets\Admin\js\script.js" />
     <Content Include="Assets\Admin\js\scripts.js" />
+    <Content Include="Assets\Client\css\bootstrap.css" />
+    <Content Include="Assets\Client\css\bootstrap.min.css" />
+    <Content Include="Assets\Client\css\cart.css" />
+    <Content Include="Assets\Client\css\etalage.css" />
+    <Content Include="Assets\Client\css\font-awesome.min.css" />
+    <Content Include="Assets\Client\css\form.css" />
+    <Content Include="Assets\Client\css\global.css" />
+    <Content Include="Assets\Client\css\jquery-ui.css" />
+    <Content Include="Assets\Client\css\sb-admin-1.css" />
+    <Content Include="Assets\Client\css\style.css" />
+    <Content Include="Assets\Client\img\logo.jpg" />
+    <Content Include="Assets\Client\img\logo1.png" />
+    <Content Include="Assets\Client\img\logo2.png" />
+    <Content Include="Assets\Client\img\logo3.png" />
+    <Content Include="Assets\Client\img\logo4.png" />
+    <Content Include="Assets\Client\img\slide1.jpg" />
+    <Content Include="Assets\Client\img\slide2.jpg" />
+    <Content Include="Assets\Client\img\slide3.jpg" />
+    <Content Include="Assets\Client\img\slide4.png" />
+    <Content Include="Assets\Client\img\slide5.png" />
+    <Content Include="Assets\Client\img\slide6.png" />
+    <Content Include="Assets\Client\js\bootstrap.min.js" />
+    <Content Include="Assets\Client\js\jquery-1.12.4.js" />
+    <Content Include="Assets\Client\js\jquery-2.1.1.min.js" />
+    <Content Include="Assets\Client\js\jquery-ui.js" />
+    <Content Include="Assets\Client\js\jquery.etalage.min.js" />
+    <Content Include="Assets\Client\js\jquery.flexisel.js" />
+    <Content Include="Assets\Client\js\jquery.min.js" />
+    <Content Include="Assets\Client\js\jquery.wmuSlider.js" />
+    <Content Include="Assets\Client\js\jsController\baseController.js" />
+    <Content Include="Assets\Client\js\jsController\cartController.js" />
+    <Content Include="Assets\Client\js\script.js" />
     <Content Include="Content\bootstrap-notify.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -988,14 +1026,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
+    <Content Include="Views\Product\Categories.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Views\Base\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

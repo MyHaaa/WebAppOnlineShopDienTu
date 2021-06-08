@@ -1,0 +1,13 @@
+﻿@model List<Models.EF.ProductCategory>
+<div class=" top-nav rsidebar span_1_of_left">
+    <h3 class="cate">CATEGORIES</h3>
+    <ul class="menu">
+        @foreach (var item in Model)
+        {
+            <li class="item1">
+                <a href="/product/@item.MetaKeyword-@item.ID">@item.Name<img class="arrow-img" src="images/arrow1.png" alt="" /> </a>
+               
+            </li>
+        }
+    </ul>
+</div>
