@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Models.EF.Supplierss>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            List of suppliers
+        </div>
+        <div class="row w3-res-tb">
+            <div class="col-sm-5 m-b-xs" style="color: black;">
+                <a href="/Administrator/Suppliersses/Create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign" style='color:black'></span> Create</a>
+            </div>
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+        </div>
+        @if (TempData["deleteMSG"] != null)
+        {
+            <div class="alert alert-warning">
+                @Html.Raw(TempData["deleteMSG"])
+            </div>
+        }
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; color: black">
+                            @Html.DisplayNameFor(model => model.SupplierName)
+                        </th>
+
+                        <th style="text-align: center; color: black">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th style="text-align: center; color: black">
+                            @Html.DisplayNameFor(model => model.ContactPerson)
+                        </th>
+                        <th style="text-align: center; color: black">Action Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="text-align: center; color: black">
+                                @Html.DisplayFor(modelItem => item.SupplierName)
+                            </td>
+
+                            <td style="text-align: center; color: black">
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td style="text-align: center; color: black">
+                                @Html.DisplayFor(modelItem => item.ContactPerson)
+                            </td>
+
+                            <td style="text-align: center; color: black">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                @Ajax.ActionLink("Delete", "Delete", new { @id = item.ID }, new AjaxOptions
+                                    {
+                                        Confirm = "You would like to delete this item?",
+                                        OnComplete = "$('#row_)" + item.ID + "').remove()",
+                                        HttpMethod = "Delete"
+                                    })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+
+
+                <div class="col-sm-12 text-right  ">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+

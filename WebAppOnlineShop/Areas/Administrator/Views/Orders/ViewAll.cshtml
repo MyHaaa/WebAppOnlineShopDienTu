@@ -1,0 +1,72 @@
+﻿@model List<Models.EF.Order>
+@{
+    ViewBag.Title = "ViewAll";
+}
+<div class="table-responsive" id="orderTable">
+    <table class="table table-striped b-t b-light">
+        <thead>
+            <tr>
+                <th style="text-align: center; color: black">
+                    Created Date
+                </th>
+                <th style="text-align: center; color: black">
+                    Username
+                </th>
+                <th style="text-align: center; color: black">
+                    Amount
+                </th>
+                <th style="text-align: center; color: black">
+                    Status
+                </th>
+                <th style="text-align: center; color: black">Action Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row_@item.ID">
+                    <td style="text-align: center; color: black">
+                       @String.Format("{0:MM/dd/yyyy}", item.CreatedDate)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.Customer.Username)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.StatusCategoryID)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @if (!item.StatusCategoryID)
+                        {
+                            <button class="btn btn-sm btn-success">
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID })*@
+                                @Ajax.ActionLink("Approve", "Approve", new { @id = item.ID }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn muốn duyet order này?",
+                                       HttpMethod = "Approve"
+                                   })
+                            </button>
+                            <button class="btn btn-sm btn-warning">@Html.ActionLink("Details", "Details", new { id = item.ID })</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-sm btn-warning">@Html.ActionLink("Details", "Details", new { id = item.ID })</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<footer class="panel-footer">
+    <div class="row">
+
+
+        <div class="col-sm-12 text-right  ">
+
+
+        </div>
+    </div>
+</footer>

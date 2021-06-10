@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Models.EF.ProductCategory>
+
+@{
+    ViewBag.Title = "ViewAll";
+}
+@if (TempData["deleteMSG"] != null)
+{
+    <div class="alert alert-warning">
+        @Html.Raw(TempData["deleteMSG"])
+    </div>
+}
+<div class="table-responsive" id="pcTable">
+    <table class="table table-striped b-t b-light">
+        <thead>
+            <tr>
+                <th style="text-align: center; color: black">
+                    Category name
+                </th>
+                <th style="text-align: center; color: black">
+                    Display order
+                </th>
+                <th style="text-align: center; color: black">
+                    Metakeyword
+                </th>
+                <th style="text-align: center; color: black">
+                    Status
+                </th>
+                <th style="text-align: center; color: black">Action Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.DisplayOrder)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.MetaKeyword)
+                    </td>
+                    <td style="text-align: center; color: black">
+                        @Html.DisplayFor(modelItem => item.Status)
+
+                    </td>
+                    <td style="text-align: center; color: black">
+                        <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AddOrEdit", "ProductCategories", new { id=@item.ID})')"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("Delete", "ProductCategories", new { id=@item.ID})')"><i class="fa fa-trash"></i></a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<footer class="panel-footer">
+    <div class="row">
+
+
+        <div class="col-sm-12 text-right  ">
+
+
+        </div>
+    </div>
+</footer>
